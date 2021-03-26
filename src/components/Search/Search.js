@@ -3,6 +3,7 @@ import Game from './Game/Game';
 import api from '../../api/index.js';
 import {  useParams } from "react-router-dom";
 import Loading from '../Loading/Loading';
+import nofound from "../../images/nofound.svg";
 
 
 const Search = () => {
@@ -28,7 +29,7 @@ const Search = () => {
 
     :
     <div className="flex flex-wrap" >
-    {games.length === 0? <>Not FOUND</>:
+    {games.length === 0? <><img  className ="svg-w"  alt="nofound"   src={nofound} /></>:
     games.map( (g) =>
       (
       <Game key={g.id} game={g} />
